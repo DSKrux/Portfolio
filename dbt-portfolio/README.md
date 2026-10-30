@@ -29,6 +29,10 @@ Core models:
 
 ## Quick Start
 
+Run the following commands from the `dbt-portfolio` directory (the directory
+containing `dbt_project.yml`), so `--profiles-dir profiles` resolves to the
+project's local profile configuration.
+
 1. Create a Python virtual environment and install deps:
 
 ```bash

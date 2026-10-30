@@ -87,3 +87,20 @@ models:
           - within_last_n_days:
               arguments:
                 days: 3650
+
+metrics:
+  - name: units_sold
+    label: Units Sold
+    type: simple
+    type_params:
+      measure:
+        name: quantity_sold
+
+  - name: net_revenue_per_unit
+    label: Net Revenue per Unit
+    type: derived
+    type_params:
+      expr: revenue / units_sold
+      metrics:
+        - name: revenue
+        - name: units_sold
