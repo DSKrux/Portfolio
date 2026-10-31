@@ -637,7 +637,7 @@ def main() -> None:
                 type="password",
                 help="Optional. Leave blank to use OPENAI_API_KEY from secrets/env.",
             )
-            openai_api_key = api_key_override or get_secret_or_env("OPENAI_API_KEY")
+            openai_api_key = (api_key_override or get_secret_or_env("OPENAI_API_KEY")).strip()
             openai_base_url = get_secret_or_env("OPENAI_BASE_URL", DEFAULT_OPENAI_BASE_URL)
 
         st.divider()
